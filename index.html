@@ -375,9 +375,8 @@
     <label class="field"><span>落款</span><input id="inFrom" maxlength="16" placeholder="远远"></label>
     <div class="panel-actions">
       <button class="primary" id="btnApply" type="button">保存并预览</button>
-      <button id="btnLink" type="button">分享给朋友</button>
+      <button id="btnLink" type="button">分享给美燕</button>
     </div>
-    <p class="tip">点「分享给朋友」会带着名字生成链接，朋友打开就能看到写给他/她的那一句。<br>也可以直接分享本页链接，让朋友自己填名字。</p>
   </div>
 </div>
 
@@ -424,7 +423,7 @@
 
   var toLine = $('toLine'), fromLine = $('fromLine'), wishText = $('wishText');
   function renderIdentity(){
-    toLine.textContent   = state.to   ? ('致 ' + state.to)          : '致 亲爱的朋友';
+    toLine.textContent   = state.to   ? ('致 ' + state.to)          : '致 亲爱的美燕宝宝';
     fromLine.textContent = state.from ? ('—— 来自 ' + state.from)   : '—— 一位惦记着你的人';
     $('inTo').value = state.to;
     $('inFrom').value = state.from;
@@ -500,7 +499,7 @@
   }
 
   $('btnCopy').addEventListener('click', function(){
-    copyText(wishPlain() + '\n' + shareUrl(), '祝福已复制，去粘贴给朋友吧 ✓');
+    copyText(wishPlain() + '\n' + shareUrl(), '祝福已复制，可以分享给美燕宝宝了 ✓');
   });
 
   /* ================= 专属链接 ================= */
@@ -542,7 +541,7 @@
       navigator.share({ title:'中秋快乐 · 一封带菠萝的贺卡', text: wishPlain(), url: url })
         .catch(function(){ copyText(url, '链接已复制 ✓'); });
     } else {
-      copyText(url, '链接已复制，发给朋友即可 ✓');
+      copyText(url, '链接已复制，发给美燕吧 ✓');
     }
   });
 
